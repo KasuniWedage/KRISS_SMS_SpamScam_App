@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="app_name">KRISS SMS පලිහ</string>
+    <string name="home_brand_name">SecureMessage</string>
+    <string name="home_brand_tagline">වංචා සහ අනවශ්‍ය පණිවිඩ ආරක්ෂාව</string>
+    <string name="home_status_checking">පද්ධතිය පරීක්ෂා කරමින්…</string>
+    <string name="home_hero_title">ඔබේ පණිවිඩ ආරක්ෂිතයි</string>
+    <string name="home_hero_subtitle">SMS වංචා, ස්පෑම් සහ ෆිෂිං සඳහා තත්‍ය කාලීන AI හඳුනාගැනීම</string>
+    <string name="home_stat_zero">0</string><string name="home_stat_scanned">පරීක්ෂා කළ</string><string name="home_stat_threats">අවදානම්</string><string name="home_stat_clean">ආරක්ෂිත</string>
+    <string name="home_chart_title">හඳුනාගැනීම් විශ්ලේෂණය</string><string name="home_chart_subtitle">ඔබේ පණිවිඩ ඉතිහාසය මත පදනම්ව</string><string name="home_chart_empty">ඔබේ ආරක්ෂණ සංඛ්‍යාලේඛන බැලීමට පණිවිඩ කිහිපයක් විශ්ලේෂණය කරන්න.</string>
+    <string name="home_analyze_title">පණිවිඩයක් විශ්ලේෂණය කරන්න</string><string name="home_analyze_subtitle">SMS එකක් පහතින් ඇතුළත් කරන්න. ගබඩා කිරීමට පෙර පෞද්ගලික තොරතුරු සඟවනු ලැබේ.</string>
+    <string name="home_message_hint">SMS පණිවිඩය ඇතුළත් කරන්න</string><string name="home_sender_hint">යවන්නාගේ අංකය/නම (අත්‍යවශ්‍ය නොවේ)</string><string name="home_char_count_default">0 / 2000</string><string name="home_analyze_button">පණිවිඩය විශ්ලේෂණය කරන්න</string>
+    <string name="home_quick_actions">ඉක්මන් ක්‍රියා</string><string name="home_action_batch">සමූහ\nවිශ්ලේෂණය</string><string name="home_action_history">ඉතිහාසය</string><string name="home_action_settings">සැකසුම්</string><string name="home_action_logout">ඉවත් වන්න</string>
+    <string name="settings_title">සැකසුම්</string><string name="settings_subtitle">යෙදුම් අභිරුචි කළමනාකරණය කරන්න</string><string name="settings_language">අතුරුමුහුණත් භාෂාව</string><string name="settings_notifications">අවදානම් දැනුම්දීම්</string><string name="settings_notifications_subtitle">ස්පෑම් සහ වංචා SMS ගැන දැනුම් දෙන්න</string><string name="settings_save">සැකසුම් සුරකින්න</string><string name="settings_saved">සැකසුම් සාර්ථකව යාවත්කාලීන විය</string><string name="settings_failed">සැකසුම් යාවත්කාලීන කළ නොහැක</string><string name="connection_error">සම්බන්ධතා දෝෂයකි</string>
+    <string name="language_english">English</string><string name="language_sinhala">සිංහල</string><string name="language_tamil">දෙමළ (தமிழ்)</string>
+    <string name="result_confidence">විශ්වාසනීයත්වය</string><string name="result_confidence_value">විශ්වාසනීයත්වය: %1$.2f%%</string><string name="result_language_value">භාෂාව: %1$s</string><string name="result_source_hybrid">තීරණ මූලාශ්‍රය: ඉහළ අවදානම් නීති + ML</string><string name="result_source_ml">තීරණ මූලාශ්‍රය: ML ආකෘතිය</string><string name="result_why">මෙම ප්‍රතිඵලයට හේතුව?</string><string name="result_report">වාර්තා කරන්න</string><string name="result_feedback">ප්‍රතිචාර</string><string name="result_download_pdf">PDF වාර්තාව බාගන්න</string><string name="result_analyze_another">තවත් SMS එකක් විශ්ලේෂණය කරන්න</string>
+    <string name="result_warning_scam">අවවාදයයි: මෙම SMS එක මත පමණක් පදනම්ව සබැඳි විවෘත කිරීම, OTP/මුරපද ලබාදීම හෝ මුදල් යැවීම නොකරන්න.</string><string name="result_warning_spam">මෙය අනවශ්‍ය හෝ ප්‍රවර්ධන අන්තර්ගතයක් විය හැක.</string><string name="result_warning_safe">ඉහළ අවදානම් වංචා සංඥා හමු නොවීය. මෙම පණිවිඩය ආරක්ෂිත බව පෙනේ.</string><string name="pdf_saved">PDF වාර්තාව සාර්ථකව සුරකින ලදී</string><string name="pdf_failed">PDF වාර්තාව සුරැකීමට නොහැකි විය</string>
+    <string name="batch_title">SMS සමූහ විශ්ලේෂණය</string><string name="batch_subtitle">එක් පේළියකට එක් SMS එකක් ඇතුළත් කරන්න. උපරිමය පණිවිඩ 100 කි.</string><string name="batch_hint">SMS 1\nSMS 2\nSMS 3</string><string name="batch_analyze">සමූහය විශ්ලේෂණය කරන්න</string><string name="batch_results">ප්‍රතිඵල</string><string name="batch_results_empty_hint">විශ්ලේෂණ ප්‍රතිඵල මෙහි පෙන්වනු ඇත.</string>
+    <string name="history_title">SMS ඉතිහාසය</string><string name="history_search">විශ්ලේෂිත SMS සොයන්න</string><string name="filter_all">සියල්ල</string><string name="label_legitimate">සාමාන්‍ය</string><string name="label_spam">ස්පෑම්</string><string name="label_scam">වංචා</string><string name="history_empty">ඉතිහාසයක් හමු නොවීය.</string>
+    <string name="login_tagline">AI බලගැන්වූ ස්පෑම් සහ වංචා ආරක්ෂාව</string><string name="login_welcome">නැවත සාදරයෙන් පිළිගනිමු</string><string name="login_subtitle">ඔබේ පණිවිඩ පරීක්ෂා කිරීමට පිවිසෙන්න</string><string name="username">පරිශීලක නාමය</string><string name="password">මුරපදය</string><string name="login_button">පිවිසෙන්න</string><string name="login_new">අලුත් ද?</string><string name="login_create">ගිණුමක් සාදන්න</string>
+    <string name="register_title">ගිණුමක් සාදන්න</string><string name="register_subtitle">ආරක්ෂිතව සිටීමට KRISS SMS Shield සමඟ එක්වන්න</string><string name="full_name">සම්පූර්ණ නම</string><string name="email">විද්‍යුත් තැපෑල</string><string name="password_rules">මුරපදය (අක්ෂර 8+, අකුරු + ඉලක්කම්)</string><string name="confirm_password">මුරපදය තහවුරු කරන්න</string><string name="register_button">ලියාපදිංචි වන්න</string>
+    <string name="required_fields">අවශ්‍ය සියලුම තොරතුරු පුරවන්න</string><string name="login_failed">පිවිසීම අසාර්ථකයි. පරිශීලක නාමය සහ මුරපදය පරීක්ෂා කරන්න.</string><string name="backend_connection_error">සේවාදායකයට සම්බන්ධ විය නොහැක: %1$s</string><string name="passwords_mismatch">මුරපද නොගැළපේ</string><string name="password_invalid">මුරපදයට අක්ෂර 8ක් හෝ වැඩි ගණනක්, අකුරු සහ ඉලක්කම් තිබිය යුතුය</string><string name="account_created">ගිණුම සාර්ථකව සාදන ලදී</string><string name="registration_failed">ලියාපදිංචිය අසාර්ථකයි: පරිශීලක නාමය හෝ ඊමේල් ලිපිනය දැනටමත් භාවිත වේ</string>
+    <string name="forgot_password">මුරපදය අමතකද?</string>
+    <string name="forgot_password_title">මුරපදය යළි සකසන්න</string>
+    <string name="forgot_password_subtitle">ඔබේ ගිණුමට සම්බන්ධ ඊමේල් ලිපිනය ඇතුළත් කරන්න. යළි සැකසුම් සබැඳිය එවනු ලැබේ.</string>
+    <string name="send_reset_link">සබැඳිය එවන්න</string>
+    <string name="reset_link_sent">එම ඊමේල් ලිපිනයට ගිණුමක් ඇත්නම්, යළි සැකසුම් සබැඳිය එවා ඇත. ඔබේ ඊමේල් පරීක්ෂා කරන්න.</string>
+    <string name="reset_password_title">නව මුරපදයක් සකසන්න</string>
+    <string name="reset_password_subtitle">ඔබේ ඊමේල් හි ලැබුණු කේතය ඇතුළත් කර නව මුරපදයක් තෝරන්න.</string>
+    <string name="reset_token">යළි සැකසුම් කේතය</string>
+    <string name="reset_password_button">මුරපදය යළි සකසන්න</string>
+    <string name="verify_code">කේතය තහවුරු කරන්න</string>
+    <string name="code_verified">කේතය තහවුරුයි. ඔබේ නව මුරපදය සාදන්න.</string>
+    <string name="reset_password_success">මුරපදය සාර්ථකව යළි සකසන ලදී. කරුණාකර පිවිසෙන්න.</string>
+    <string name="reset_success_title">මුරපදය යාවත්කාලීන කළා!</string>
+    <string name="continue_to_sign_in">පිවිසුම වෙත යන්න</string>
+    <string name="reset_password_failed">මෙම සබැඳිය අවලංගු හෝ කල් ඉකුත් වී ඇත. නැවත උත්සාහ කරන්න.</string>
+    <string name="or_divider">හෝ</string>
+    <string name="continue_with_google">Google සමඟ ඉදිරියට යන්න</string>
+    <string name="continue_with_facebook">Facebook සමඟ ඉදිරියට යන්න</string>
+    <string name="social_login_failed">පිවිසීම අසාර්ථකයි. නැවත උත්සාහ කරන්න.</string>
+    <string name="social_login_cancelled">පිවිසීම අවලංගු කරන ලදී</string>
+    <string name="sms_empty">SMS පණිවිඩය හිස් විය නොහැක</string><string name="sms_too_long">SMS පණිවිඩය අවසර ඇති උපරිම දිග ඉක්මවා ඇත</string><string name="processing_request">ඉල්ලීම සකසමින්…</string><string name="analysis_failed">විශ්ලේෂණය අසාර්ථකයි (%1$d)</string>
+    <string name="batch_empty_error">එක් පේළියකට එක් SMS ලෙස අවම වශයෙන් පණිවිඩයක් ඇතුළත් කරන්න.</string><string name="batch_limit_error">උපරිම සමූහ ප්‍රමාණය SMS 100 කි.</string><string name="batch_processing">පණිවිඩ %1$dක් සකසමින්…</string><string name="batch_failed">සමූහ විශ්ලේෂණය අසාර්ථකයි (%1$d).</string>
+    <string name="csv_saved">CSV ගොනුව සාර්ථකව සුරකින ලදී.</string><string name="csv_failed">CSV ගොනුව සුරැකීමට නොහැකි විය.</string><string name="csv_no_records">අපනයනය කිරීමට වාර්තා නොමැත.</string><string name="history_load_failed">ඉතිහාසය ලබාගත නොහැක</string><string name="delete_history_title">SMS ඉතිහාසය මකන්නද?</string><string name="delete_history_message">මෙම ක්‍රියාව ආපසු හැරවිය නොහැක.</string><string name="cancel">අවලංගු කරන්න</string><string name="delete">මකන්න</string>
+    <string name="report_dialog_title">සැක සහිත පණිවිඩය වාර්තා කරන්න</string><string name="report_reason_hint">මෙම පණිවිඩය සැක සහිත වන්නේ ඇයි?</string><string name="report_submit">වාර්තා කරන්න</string><string name="report_default_reason">පරිශීලකයා මෙම පණිවිඩය සැක සහිත ලෙස සලකුණු කළේය</string><string name="report_success">වාර්තාව යවන ලදී. ස්තුතියි.</string><string name="report_failed">වාර්තාව යැවීමට නොහැකි විය.</string>
+    <string name="feedback_dialog_title">හඳුනාගැනීම පිළිබඳ ප්‍රතිචාර</string><string name="feedback_dialog_message">වර්ගීකරණය නිවැරදිදැයි අපට කියන්න. අනාගත ආකෘති වැඩිදියුණු කිරීම් සඳහා මෙය සමාලෝචනය කළ හැක.</string><string name="feedback_optional">අමතර ප්‍රතිචාර (අත්‍යවශ්‍ය නොවේ)</string><string name="submit">යවන්න</string><string name="feedback_correct">නිවැරදියි (%1$s)</string><string name="feedback_success">ප්‍රතිචාරය යවන ලදී. ස්තුතියි.</string><string name="feedback_failed">ප්‍රතිචාරය යැවීම අසාර්ථකයි.</string>
+    <string name="download_report">වාර්තාව බාගන්න</string>
+    <string name="download_pdf">PDF බාගන්න</string>
+    <string name="delete_record">වාර්තාව මකන්න</string>
+    <string name="choose_report_language">වාර්තාවේ භාෂාව තෝරන්න</string>
+    <string name="chart_center_total">%1$d\nපණිවිඩ</string>
+    <string name="chart_legend_value">%1$s (%2$d)</string>
+    <string name="login_success">පිවිසීම සාර්ථකයි. නැවත සාදරයෙන් පිළිගනිමු!</string>
+    <string name="logout_success">ඔබ සාර්ථකව ඉවත් විය.</string>
+    <string name="notification_channel_name">අවදානම් දැනුම්දීම්</string>
+    <string name="notification_channel_description">විශ්ලේෂිත පණිවිඩ ස්පෑම් හෝ වංචා ලෙස හඳුනාගත් විට දැනුම් දෙයි</string>
+    <string name="notification_scam_title">වංචා අවදානමක් හඳුනාගන්නා ලදී</string>
+    <string name="notification_spam_title">ස්පෑම් පණිවිඩයක් හඳුනාගන්නා ලදී</string>
+    <string name="notification_threat_body">%1$s • %2$.0f%% විශ්වාසනීයත්වය. ප්‍රතිඵලය බැලීමට KRISS SMS Shield විවෘත කරන්න.</string>
+    <string name="batch_download_report">සමූහ PDF වාර්තාව බාගන්න</string>
+    <string name="batch_history">සමූහ ඉතිහාසය</string>
+    <string name="batch_report_ready">සමූහ වාර්තාව බාගැනීමට සූදානම්.</string>
+    <string name="batch_history_empty">සමූහ විශ්ලේෂණ තවම නොමැත.</string>
+    <string name="batch_history_summary">පණිවිඩ %1$d • අවදානම් %2$d</string>
+    <string name="delete_batch">සමූහය මකන්න</string>
+    <string name="delete_batch_confirm_title">සමූහ ඉතිහාසය මකන්නද?</string>
+    <string name="delete_batch_confirm_message">ඔබට මෙම සමූහ විශ්ලේෂණ සටහන මැකීමට අවශ්‍ය බව තහවුරුද?</string>
+    <string name="clear_all_batch_history">සියලු සමූහ ඉතිහාසය මකන්න</string>
+    <string name="clear_batch_history_confirm_title">සියලු සමූහ ඉතිහාසය මකන්නද?</string>
+    <string name="clear_batch_history_confirm_message">මෙය මෙම උපාංගයේ ඇති සියලුම සමූහ විශ්ලේෂණ ඉතිහාස සටහන් ස්ථිරවම මකා දමනු ඇත.</string>
+    <string name="batch_deleted">සමූහ ඉතිහාස සටහන මකන ලදී.</string>
+    <string name="all_batch_history_cleared">සියලුම සමූහ ඉතිහාසය මකා දමන ලදී.</string>
+    <string name="clear_history">ඉතිහාසය මකන්න</string>
+    <string name="delete_category_title">ඉතිහාසය මකන්නද?</string>
+    <string name="delete_category_all">සියලු ඉතිහාසය මකන්න</string>
+    <string name="delete_category_scam">සියලු වංචා (Scam) පණිවිඩ මකන්න</string>
+    <string name="delete_category_spam">සියලු ස්පෑම් (Spam) පණිවිඩ මකන්න</string>
+    <string name="delete_category_legit">සියලු සාමාන්‍ය (Legitimate) පණිවිඩ මකන්න</string>
+    <string name="delete_category_confirm_message">%1$s ස්ථිරවම මැකීමට අවශ්‍ය බව තහවුරුද?</string>
+    <string name="bulk_history_deleted">පණිවිඩ %1$dක් සාර්ථකව මකන ලදී.</string>
+    <string name="community_feed">ප්‍රජා ස්පෑම් ලැයිස්තුව</string><string name="my_reports">මගේ වාර්තා</string><string name="my_feedback">මගේ ප්‍රතිචාර</string><string name="publish_spam">ප්‍රජාවට ප්‍රකාශ කරන්න</string><string name="publish_confirm_title">යවන්නා සහ පණිවිඩය ප්‍රකාශ කරන්නද?</string><string name="publish_confirm_message">සම්පූර්ණ යවන්නාගේ අංකය සහ පණිවිඩය ලියාපදිංචි සියලුම KRISS පරිශීලකයන්ට පෙනෙනු ඇත. මෙම තොරතුරු බෙදාගැනීමට අයිතිය ඇත්නම් පමණක් ප්‍රකාශ කරන්න.</string><string name="publish">ප්‍රකාශ කරන්න</string><string name="publish_success">ප්‍රජා ලැයිස්තුවට ප්‍රකාශ කරන ලදී.</string><string name="publish_failed">මෙම පණිවිඩය ප්‍රකාශ කළ නොහැක.</string><string name="sender_required">ප්‍රකාශ කිරීමට පෙර යවන්නාගේ අංකය ඇතුළත් කරන්න.</string><string name="community_empty">පෙන්වීමට කිසිවක් නැත.</string><string name="home_action_community">ප්‍රජාව, වාර්තා සහ ප්‍රතිචාර</string><string name="navigation_menu">සංචාලන මෙනුව</string><string name="menu_analyze">පණිවිඩය විශ්ලේෂණය කරන්න</string>
+    <string name="account_security">පැතිකඩ, ආරක්ෂාව සහ ක්‍රියාකාරකම්</string><string name="auto_delete_history">දින 30කට පසු ඉතිහාසය ස්වයංක්‍රීයව මකන්න</string><string name="auto_delete_history_subtitle">සක්‍රිය කළ විට දින 30කට වඩා පැරණි විශ්ලේෂණ ඉතිහාසය ස්ථිරව මැකේ.</string><string name="profile_title">පැතිකඩ සංස්කරණය</string><string name="update_profile">විස්තර යාවත්කාලීන කරන්න</string><string name="change_password">මුරපදය වෙනස් කරන්න</string><string name="current_password">වත්මන් මුරපදය</string><string name="new_password">නව මුරපදය</string><string name="delete_account">ගිණුම මකන්න</string><string name="delete_account_warning">මෙය ඔබගේ ගිණුම සහ සම්බන්ධ වාර්තා ස්ථිරව මකයි. තහවුරු කිරීමට මුරපදය ඇතුළත් කරන්න.</string><string name="profile_updated">පැතිකඩ සාර්ථකව යාවත්කාලීන විය.</string><string name="password_changed">මුරපදය සාර්ථකව වෙනස් විය.</string><string name="account_deleted">ගිණුම සාර්ථකව මකා ඇත.</string><string name="activity_log">ක්‍රියාකාරකම් සටහන</string><string name="activity_log_empty">ක්‍රියාකාරකම් වාර්තා වී නැත.</string><string name="getting_started">ආරම්භක මාර්ගෝපදේශය</string><string name="guide_steps">1. KRISS SMS Shield ස්ථාපනය කර විවෘත කරන්න.\n\n2. මාර්ගෝපදේශය කියවා ගිණුමක් සාදන්න.\n\n3. නම, පරිශීලක නාමය, ඊමේල් සහ ශක්තිමත් මුරපදයක් ඇතුළත් කරන්න.\n\n4. නව ගිණුමෙන් පිවිසෙන්න.\n\n5. සැකසුම් තුළ භාෂාව සහ දැනුම්දීම් තෝරන්න.\n\n6. Home තිරයේ SMS සහ යවන්නා ඇතුළත් කර විශ්ලේෂණය කරන්න.\n\n7. ප්‍රතිඵලය, හේතුව සහ ආරක්ෂණ නිර්දේශ බලන්න.\n\n8. PDF බාගන්න, ප්‍රතිචාර දෙන්න, වාර්තා කරන්න හෝ අවසර ඇතිව ප්‍රජාවට ප්‍රකාශ කරන්න.\n\n9. History සහ Batch Analysis භාවිත කරන්න.\n\n10. පැතිකඩ සහ ක්‍රියාකාරකම් කළමනාකරණය කරන්න.</string><string name="continue_to_login">පිවිසුමට යන්න</string>
+    <string name="complete_all_fields">කරුණාකර සියලු පැතිකඩ තොරතුරු සම්පූර්ණ කරන්න.</string>
+    <string name="password_requirements">වත්ම මුරපදය සහ අකුරු හා ඉලක්කම් ඇතුළත් අවම අක්ෂර 8ක නව මුරපදයක් යොදන්න.</string>
+    <string name="first_login_guide_title">KRISS SMS Shield වෙත සාදරයෙන් පිළිගනිමු</string>
+    <string name="first_login_guide_message">ඉක්මන් ආරම්භය:\n\n1. Settings වෙතින් English හෝ සිංහල තෝරා දැනුම්දීම් සකසන්න.\n\n2. Home තිරයේ SMS පණිවිඩය සහ අවශ්‍ය නම් යවන්නාගේ අංකය ඇතුළත් කරන්න.\n\n3. Analyze Message ඔබා අවදානම් ප්‍රතිඵලය බලන්න.\n\n4. සුරැකි හෝ බහු පණිවිඩ සඳහා History සහ Batch Analysis භාවිත කරන්න.\n\n5. වාර්තා බාගන්න, ප්‍රතිචාර දෙන්න හෝ සැක සහිත පණිවිඩ වාර්තා කරන්න.\n\n6. Settings වෙතින් පැතිකඩ, මුරපදය සහ පෞද්ගලිකත්වය කළමනාකරණය කරන්න.</string>
+    <string name="view_full_guide">සම්පූර්ණ මාර්ගෝපදේශය</string>
+    <string name="prev_page">කලින්</string>
+    <string name="next_page">ඊළඟ</string>
+    <string name="page_indicator">පිටුව %1$d / %2$d</string>
+    <string name="got_it">හරි</string>
+    <string name="notification_permission_denied">දැනුම්දීම් අවහිර කර ඇත. තර්ජන දැනුම්දීම් ලබාගැනීමට Android App Settings තුළ ඒවා සක්‍රිය කරන්න.</string>
+    <string name="admin_dashboard">පරිපාලක උපකරණ පුවරුව</string>
+    <string name="admin_dashboard_title">KRISS පරිපාලක උපකරණ පුවරුව</string>
+    <string name="admin_status">තත්ත්වය</string>
+    <string name="admin_system_metrics">පද්ධති මිනුම්</string>
+    <string name="admin_performance_24h">පැය 24 ක ක්‍රියාකාරිත්වය</string>
+    <string name="admin_audit_integrity">විගණන අඛණ්ඩතාව</string>
+    <string name="refresh">නැවුම් කරන්න</string>
+    <string name="back">ආපසු</string>
+    <string name="loading">පූරණය වෙමින්…</string>
+    <string name="unavailable">ලබාගත නොහැක</string>
+    <string name="updated">යාවත්කාලීන කරන ලදී</string>
+    <string name="admin_metrics_value">පරිශීලකයින්: %1$d\nපණිවිඩ: %2$d\nවාර්තා: %3$d\nවර්ගීකරණ: %4$s</string>
+    <string name="admin_performance_value">ඉල්ලීම්: %1$d\nසේවාදායක දෝෂ: %2$d (%3$.2f%%)\nසාමාන්‍යය: %4$.2f ms\nP95: %5$.2f ms\nතත්පර 2ක් තුළ වර්ගීකරණ: %6$.2f%%</string>
+    <string name="admin_integrity_value">වලංගුයි: %1$b\nපරීක්ෂා කළ වාර්තා: %2$d\n%3$s</string>
+    <string name="admin_load_failed">පරිපාලක දත්ත පූරණය කළ නොහැක: %1$s</string>
+</resources>

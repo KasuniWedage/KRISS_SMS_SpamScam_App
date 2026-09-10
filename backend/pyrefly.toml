@@ -1,0 +1,18 @@
+[pyrefly]
+# Resolve `app.*` and `scripts.*` from the backend/ root
+search_path = [".", "scripts", "tests"]
+python_version = "3.11"
+
+# Use the virtual environment for type resolution
+python_interpreter = ".venv/Scripts/python.exe"
+
+# Suppress errors that are informational / optional-package related
+ignore_missing_source = true
+ignore_missing_imports = true
+
+# Disable specific noisy checks
+# - unnecessary-cast: int(), float(), bool() on already-typed values
+# - deprecated: datetime.utcnow usage
+# - missing-type-stubs: requests, firebase_admin etc.
+[pyrefly.per_file_ignore_errors]
+"**/*" = ["unnecessary-cast", "deprecated"]

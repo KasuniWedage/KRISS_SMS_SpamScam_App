@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+**/.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment files and application secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+**/.jwt-secret
+**/*service-account*.json
+**/*credentials*.json
+**/firebase-adminsdk*.json
+
+# Private keys, signing files and certificates
+*.jks
+*.keystore
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local databases, backups, logs and runtime files
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.log
+logs/
+tmp/
+.cache/
+backups/
+**/backups/*.sqlite3*
+**/backups/*.sql*
+
+# Colab model binary exports
+backend/model/*.joblib
+backend/model/*.zip
+
+# Android build artifacts and local secrets
+.gradle/
+**/build/
+local.properties
+**/google-services.json
+.idea/
+*.iml
+.DS_Store
+Thumbs.db

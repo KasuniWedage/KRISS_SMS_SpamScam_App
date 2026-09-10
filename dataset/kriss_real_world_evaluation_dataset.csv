@@ -1,0 +1,48 @@
+﻿id,message,label,language,category,source_type
+1,"Your ComBank Mastercard ending 4589 used for LKR 3,450.00 at Keells Super on 28-Aug-2026. Bal LKR 45,210.00",Legitimate,English,Banking/Transactional,consented_real
+2,"Hi Nimal, can you please email the quarterly project presentation by 4 PM today?",Legitimate,English,Personal,consented_real
+3,Your Daraz order #7489201 has been picked up by courier and will be delivered by tomorrow evening.,Legitimate,English,E-Commerce,consented_real
+4,Doctor appointment confirmed with Dr. Perera at Asiri Hospital for 31-Aug-2026 at 5:30 PM. Token #14.,Legitimate,English,Healthcare,consented_real
+5,"Dear customer, your Dialog bill of Rs. 1,840.50 has been settled successfully via FriMi. Thank you.",Legitimate,English,Billing,consented_real
+6,EXCLUSIVE DEAL! Enjoy 40% OFF on all shoes at DSI showrooms island-wide this Friday to Sunday! T&C apply.,Spam,English,Retail Promo,consented_real
+7,Get unlimited YouTube & TikTok for 30 days for only Rs. 390+tax. Type ACT YT390 and send to 678 now!,Spam,English,Telecom Offer,consented_real
+8,Apply for an easy personal loan with lowest interest rates from Prime Finance. Call 0112345678 today.,Spam,English,Financial Promo,consented_real
+9,Buy 1 Large Pizza and get 1 Medium Pizza absolutely FREE at Pizza Hut today only! Call 0112729729.,Spam,English,Food Promo,consented_real
+10,URGENT NOTICE: Your BOC online banking access is temporarily locked due to suspicious activity. Verify credentials immediately at http://boc-portal-security.com/login,Scam,English,Phishing/Banking,consented_real
+11,"Congratulations! Your mobile number won LKR 500,000 in the Central Bank Golden Jubilee Draw. To claim, call 0771239874.",Scam,English,Lottery Scam,consented_real
+12,Sri Lanka Post: Your package #SL98231 cannot be delivered due to missing postal address fee (Rs. 450). Pay now at http://slpost-tracking-clear.top,Scam,English,Parcel Scam,consented_real
+13,"Work from home part-time and earn Rs. 8,000 daily by liking YouTube videos. No investment needed. WhatsApp 0782345678 now.",Scam,English,Fake Job,consented_real
+14,"Urgent: Your HNB Debit Card has been debited Rs. 48,000. If you did not authorize this, cancel immediately at http://hnb-cancel-txn.link",Scam,English,Credential Theft,consented_real
+15,"ඔබගේ සම්පත් බැංකු ගිණුමෙන් රු. 2,500.00 ක මුදලක් ATM මගින් ලබාගෙන ඇත. ඉතිරි ශේෂය රු. 34,120.00.",Legitimate,Sinhala,Banking/Transactional,consented_real
+16,"සුබ උදෑසනක් අම්මේ, මම අද හවස ගෙදර එන්න ටිකක් පරක්කු වෙයි. කලබල වෙන්න එපා.",Legitimate,Sinhala,Personal,consented_real
+17,ඔබගේ ලියාපදිංචි රථවාහන ආදායම් බලපත්‍රය නිකුත් කර ඇත. ප්‍රාදේශීය ලේකම් කාර්යාලයෙන් ලබාගන්න.,Legitimate,Sinhala,Government,consented_real
+18,"ඩයලොග් පාරිභෝගික භවතුනි, ඔබගේ මාසික බිල්පත රු. 1,450.00 කි. ගෙවිය යුතු අවසන් දිනය සැප්තැම්බර් 05.",Legitimate,Sinhala,Utility,consented_real
+19,විශේෂ දීමනාව! මෙම සති අන්තයේ සියලුම ඇඳුම් පැළඳුම් සඳහා 30% ක වට්ටමක් නොලිමිට් ශාඛා වෙතින් ලබාගන්න.,Spam,Sinhala,Retail Promo,consented_real
+20,රු. 100 කට දින 7 ක් සඳහා අසීමිත Dialog ඇමතුම් සහ 2GB ඩේටා! සක්‍රිය කර ගැනීමට #123# අමතන්න.,Spam,Sinhala,Telecom Offer,consented_real
+21,අඩුම පොලී අනුපාත යටතේ නිවාස ණය සහ රන් ණය පහසුකම්. අදම අමතන්න: 0117894561.,Spam,Sinhala,Finance Promo,consented_real
+22,අවවාදයයි! ඔබගේ BOC ගිණුම අවලංගු වීමට නියමිතයි. ඔබගේ තොරතුරු තහවුරු කිරීමට වහාම http://boc-auth-lk.info වෙත පිවිසෙන්න.,Scam,Sinhala,Phishing/Banking,consented_real
+23,සුබ පැතුම්! ඔබගේ දුරකථන අංකයට රුපියල් ලක්ෂ 10 ක මුදල් ත්‍යාගයක් හිමිව ඇත. ලබා ගැනීමට ඔබගේ OTP අංකය 0718956234 වෙත එවන්න.,Scam,Sinhala,Lottery Scam,consented_real
+24,ඔබගේ පාර්සලය රේගුවේ රඳවාගෙන ඇත. මුදාගැනීමට රු. 650 ක ගාස්තුව ගෙවන්න: http://slpost-duty-pay.org,Scam,Sinhala,Parcel Scam,consented_real
+25,"කිසිදු ලියකියවිලි නොමැතිව විනාඩි 5 න් රු. 100,000 ක ක්ෂණික ණයක් ලබාගන්න! පිවිසෙන්න: http://quick-cash-loan.top",Scam,Sinhala,Fake Loan,consented_real
+26,"Machan, mama colombo walata awa. raata set wela katha karamuda?",Legitimate,Singlish,Personal,consented_real
+27,Oyage Sampath account eken Rs. 1500.00 transfer una. Reference num 984512.,Legitimate,Singlish,Banking/Transactional,consented_real
+28,Ada class eka hawasa 4.00 ta thiyanawa. hamoma assignment eka aran enna.,Legitimate,Singlish,Education,consented_real
+29,Uber: Oyage driver Priyantha enna laga inne. Car number WP CA-4589.,Legitimate,Singlish,Transport,consented_real
+30,Adama recharge karanna! Rs. 199 ta 10GB Anytime Data + Free Whatsapp! Dialog call 678.,Spam,Singlish,Telecom Promo,consented_real
+31,Weekend special offer ODEL eken! All branded items walata 25% discount. Danma enna.,Spam,Singlish,Retail Promo,consented_real
+32,Oyage car ekata aduma insurance rate eka ganna! Call 0771234567 for free quotation.,Spam,Singlish,Insurance Promo,consented_real
+33,URGENT: Oyage Commercial Bank account block wela. Unblock karaganna danma http://combk-verify-online.com link ekata yanna.,Scam,Singlish,Phishing,consented_real
+34,"Suba pathum! Oya Rs. 200,000 prize ekak win kala. Claim karanna oyage OTP number eka ewanna.",Scam,Singlish,Lottery Scam,consented_real
+35,Oyage parcel eka deliver karanna ba address waradi nisa. Rs. 400 gewala update karanna: http://slpost-redeliver.xyz,Scam,Singlish,Parcel Scam,consented_real
+36,Gedara idan dawasata Rs. 5000 hoyanna kemathida? No experience needed. Whatsapp karanna 0768954123 ta.,Scam,Singlish,Job Scam,consented_real
+37,"உங்கள் Commercial Bank கணக்கிலிருந்து ரூ. 4,500.00 ATM மூலம் எடுக்கப்பட்டுள்ளது. மீதி ரூ. 52,300.00.",Legitimate,Tamil,Banking/Transactional,consented_real
+38,"அன்புள்ள வாடிக்கையாளரே, உங்கள் Dialog மாதாந்த கட்டணம் ரூ. 1,250.00 வெற்றிகரமாக செலுத்தப்பட்டது.",Legitimate,Tamil,Utility,consented_real
+39,"வணக்கம் நண்பா, இன்று மாலை 6 மணிக்கு சந்திப்போமா? எனக்கு அழைப்பு எடுக்கவும்.",Legitimate,Tamil,Personal,consented_real
+40,உங்கள் மருத்துவ பரிசோதனை அறிக்கை தயாராக உள்ளது. Asiri மருத்துவமனைக்கு வந்து பெற்றுக்கொள்ளவும்.,Legitimate,Tamil,Healthcare,consented_real
+41,மெகா ஆஃபர்! Dialog இலிருந்து ரூ. 150 க்கு 15GB டேட்டா + வரம்பற்ற அழைப்புகள்! பெற #123# டயல் செய்க.,Spam,Tamil,Telecom Promo,consented_real
+42,சிறப்பு தள்ளுபடி விற்பனை! No Limit கடைகளில் அனைத்து ஆடைகளுக்கும் 35% வரை விலைகுறைப்பு.,Spam,Tamil,Retail Promo,consented_real
+43,குறைந்த வட்டியில் தங்கக் கடன் மற்றும் வீட்டுக் கடன் வசதிகள். உடனே தொடர்பு கொள்ளவும்: 0112456789.,Spam,Tamil,Finance Promo,consented_real
+44,அவசரம்! உங்கள் People's Bank கணக்கு முடக்கப்பட்டுள்ளது. உடனடியாக சரிபார்க்க http://peoples-verify-account.com கிளிக் செய்க.,Scam,Tamil,Phishing/Banking,consented_real
+45,"வாழ்த்துகள்! உங்கள் எண் ரூ. 500,000 குலுக்கலில் வென்றுள்ளது! பரிசைப் பெற உங்கள் OTP எண்ணை 0779845123 க்கு பகிரவும்.",Scam,Tamil,Lottery Scam,consented_real
+46,உங்கள் தபால் பார்சல் சுங்கத்தில் தடுத்து வைக்கப்பட்டுள்ளது. ரூ. 500 செலுத்தி விடுவிக்க http://post-clear-sl.top செல்லவும்.,Scam,Tamil,Parcel Scam,consented_real
+47,"ஆவணங்கள் இன்றி 10 நிமிடங்களில் ரூ. 200,000 உடனடி தனிநபர் கடன் பெற http://quick-easy-loan.link",Scam,Tamil,Fake Loan,consented_real

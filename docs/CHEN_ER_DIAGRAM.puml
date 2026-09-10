@@ -1,0 +1,411 @@
+@startuml CHEN_ER_DIAGRAM
+' ============================================================
+' KRISS SMS Shield — Chen Conceptual E-R Diagram
+' Spec reference: SYSTEM_DIAGRAM_DRAWING_SPECIFICATION.md §9
+' Notation:
+'   rectangle  = Entity
+'   diamond    = Relationship
+'   ellipse    = Attribute  (underlined name = primary key)
+'   (m,n) labels on association lines = min-max participation
+' ============================================================
+
+title KRISS SMS Shield — Chen Conceptual E-R Diagram\n(rectangles = entities · diamonds = relationships · ellipses = attributes · underlined = PK)
+
+skinparam shadowing false
+skinparam linetype polyline
+skinparam nodesep 60
+skinparam ranksep 80
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+
+' ─────────────────────────────────────────────────────────
+' Colour palette
+' ─────────────────────────────────────────────────────────
+skinparam rectangle {
+  BackgroundColor #D6EAF8
+  BorderColor     #2980B9
+  FontColor       #1A5276
+  FontStyle       bold
+}
+skinparam diamond {
+  BackgroundColor #FAD7A0
+  BorderColor     #CA6F1E
+  FontColor       #784212
+}
+skinparam ellipse {
+  BackgroundColor #D5F5E3
+  BorderColor     #1E8449
+  FontColor       #145A32
+}
+
+' ════════════════════════════════════════════════════════
+'  ENTITIES
+' ════════════════════════════════════════════════════════
+
+rectangle "User\n(mobile_users)" as USER
+rectangle "SessionToken" as ST
+rectangle "PasswordResetToken" as PRT
+rectangle "SMSMessage" as SMS
+rectangle "ClassificationResult" as CR
+rectangle "Report" as RPT
+rectangle "Feedback" as FB
+rectangle "PublishedSpam" as PS
+rectangle "AuditLog" as AL
+rectangle "AuditSeal" as AS
+rectangle "ApiPerformanceMetric" as APM
+rectangle "SystemError" as SE
+rectangle "TrainingSample" as TS
+rectangle "DatasetVersion" as DV
+rectangle "BatchAnalysis" as BA
+
+' ════════════════════════════════════════════════════════
+'  USER ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as USER_id
+ellipse "username" as USER_un
+ellipse "email" as USER_em
+ellipse "role" as USER_role
+ellipse "auth_provider" as USER_ap
+ellipse "firebase_uid" as USER_fuid
+
+USER -- USER_id
+USER -- USER_un
+USER -- USER_em
+USER -- USER_role
+USER -- USER_ap
+USER -- USER_fuid
+
+' ════════════════════════════════════════════════════════
+'  SESSION TOKEN ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as ST_id
+ellipse "jti" as ST_jti
+ellipse "expires_at" as ST_exp
+ellipse "revoked" as ST_rev
+
+ST -- ST_id
+ST -- ST_jti
+ST -- ST_exp
+ST -- ST_rev
+
+' ════════════════════════════════════════════════════════
+'  PASSWORD RESET TOKEN ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as PRT_id
+ellipse "token_hash" as PRT_hash
+ellipse "expires_at" as PRT_exp
+ellipse "used" as PRT_used
+
+PRT -- PRT_id
+PRT -- PRT_hash
+PRT -- PRT_exp
+PRT -- PRT_used
+
+' ════════════════════════════════════════════════════════
+'  SMS MESSAGE ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as SMS_id
+ellipse "masked_text" as SMS_text
+ellipse "language" as SMS_lang
+ellipse "sender_no" as SMS_sno
+ellipse "received_date" as SMS_rd
+
+SMS -- SMS_id
+SMS -- SMS_text
+SMS -- SMS_lang
+SMS -- SMS_sno
+SMS -- SMS_rd
+
+' ════════════════════════════════════════════════════════
+'  CLASSIFICATION RESULT ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as CR_id
+ellipse "sms_id (UQ)" as CR_smsid
+ellipse "predicted_class" as CR_class
+ellipse "confidence_score" as CR_conf
+ellipse "scam_type" as CR_st
+ellipse "explanation" as CR_exp
+ellipse "model_version" as CR_mv
+
+CR -- CR_id
+CR -- CR_smsid
+CR -- CR_class
+CR -- CR_conf
+CR -- CR_st
+CR -- CR_exp
+CR -- CR_mv
+
+' ════════════════════════════════════════════════════════
+'  REPORT ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as RPT_id
+ellipse "reason" as RPT_reason
+ellipse "report_date" as RPT_rd
+
+RPT -- RPT_id
+RPT -- RPT_reason
+RPT -- RPT_rd
+
+' ════════════════════════════════════════════════════════
+'  FEEDBACK ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as FB_id
+ellipse "feedback_text" as FB_text
+ellipse "expected_label" as FB_el
+ellipse "status" as FB_status
+ellipse "review_note" as FB_rn
+ellipse "created_at" as FB_ca
+
+FB -- FB_id
+FB -- FB_text
+FB -- FB_el
+FB -- FB_status
+FB -- FB_rn
+FB -- FB_ca
+
+' ════════════════════════════════════════════════════════
+'  PUBLISHED SPAM ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as PS_id
+ellipse "sms_id (UQ)" as PS_smsid
+ellipse "sender_no" as PS_sno
+ellipse "message_text" as PS_mt
+ellipse "label" as PS_label
+ellipse "published_at" as PS_pa
+
+PS -- PS_id
+PS -- PS_smsid
+PS -- PS_sno
+PS -- PS_mt
+PS -- PS_label
+PS -- PS_pa
+
+' ════════════════════════════════════════════════════════
+'  AUDIT LOG ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as AL_id
+ellipse "action" as AL_action
+ellipse "detail" as AL_detail
+ellipse "created_at" as AL_ca
+ellipse "record_hash" as AL_rh
+
+AL -- AL_id
+AL -- AL_action
+AL -- AL_detail
+AL -- AL_ca
+AL -- AL_rh
+
+' ════════════════════════════════════════════════════════
+'  AUDIT SEAL ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as AS_id
+ellipse "audit_log_id (UQ)" as AS_alid
+ellipse "previous_hash" as AS_ph
+ellipse "record_hash" as AS_rh
+ellipse "created_at" as AS_ca
+
+AS -- AS_id
+AS -- AS_alid
+AS -- AS_ph
+AS -- AS_rh
+AS -- AS_ca
+
+' ════════════════════════════════════════════════════════
+'  API PERFORMANCE METRIC ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as APM_id
+ellipse "request_id (UQ)" as APM_rid
+ellipse "method" as APM_m
+ellipse "path" as APM_p
+ellipse "status_code" as APM_sc
+ellipse "duration_ms" as APM_d
+
+APM -- APM_id
+APM -- APM_rid
+APM -- APM_m
+APM -- APM_p
+APM -- APM_sc
+APM -- APM_d
+
+' ════════════════════════════════════════════════════════
+'  SYSTEM ERROR ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as SE_id
+ellipse "request_id" as SE_rid
+ellipse "error_type" as SE_et
+ellipse "message" as SE_msg
+ellipse "created_at" as SE_ca
+
+SE -- SE_id
+SE -- SE_rid
+SE -- SE_et
+SE -- SE_msg
+SE -- SE_ca
+
+' ════════════════════════════════════════════════════════
+'  TRAINING SAMPLE ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as TS_id
+ellipse "masked_text" as TS_text
+ellipse "label" as TS_label
+ellipse "language" as TS_lang
+ellipse "source_type" as TS_st
+ellipse "consent_reference" as TS_cr
+ellipse "review_status" as TS_rs
+
+TS -- TS_id
+TS -- TS_text
+TS -- TS_label
+TS -- TS_lang
+TS -- TS_st
+TS -- TS_cr
+TS -- TS_rs
+
+' ════════════════════════════════════════════════════════
+'  DATASET VERSION ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as DV_id
+ellipse "version_tag (UQ)" as DV_vt
+ellipse "sample_count" as DV_sc
+ellipse "file_path" as DV_fp
+ellipse "created_at" as DV_ca
+
+DV -- DV_id
+DV -- DV_vt
+DV -- DV_sc
+DV -- DV_fp
+DV -- DV_ca
+
+' ════════════════════════════════════════════════════════
+'  BATCH ANALYSIS ATTRIBUTES
+' ════════════════════════════════════════════════════════
+ellipse "<u>id (PK)</u>" as BA_id
+ellipse "batch_id (UQ)" as BA_bid
+ellipse "total_count" as BA_tc
+ellipse "safe_count" as BA_safc
+ellipse "spam_count" as BA_spmc
+ellipse "scam_count" as BA_scmc
+ellipse "created_at" as BA_ca
+
+BA -- BA_id
+BA -- BA_bid
+BA -- BA_tc
+BA -- BA_safc
+BA -- BA_spmc
+BA -- BA_scmc
+BA -- BA_ca
+
+' ════════════════════════════════════════════════════════
+'  RELATIONSHIPS  (min-max cardinalities)
+'  Format on each line:  EntityA "A-side" -- diamond -- "B-side" EntityB
+'  Spec §9.2 table is the authoritative source.
+' ════════════════════════════════════════════════════════
+
+' --- User owns SessionToken (0,N) — (1,1)
+diamond "owns" as R_owns_ST
+USER   "(0,N)" -- R_owns_ST
+R_owns_ST -- "(1,1)" ST
+
+' --- User requests PasswordResetToken (0,N) — (1,1)
+diamond "requests" as R_req_PRT
+USER   "(0,N)" -- R_req_PRT
+R_req_PRT -- "(1,1)" PRT
+
+' --- User submits SMSMessage (0,N) — (1,1)
+diamond "submits" as R_sub_SMS
+USER   "(0,N)" -- R_sub_SMS
+R_sub_SMS -- "(1,1)" SMS
+
+' --- SMSMessage has result ClassificationResult (0,1) — (1,1)
+diamond "has result" as R_has_CR
+SMS    "(0,1)" -- R_has_CR
+R_has_CR -- "(1,1)" CR
+
+' --- User files Report (0,N) — (1,1)
+diamond "files" as R_files_RPT
+USER   "(0,N)" -- R_files_RPT
+R_files_RPT -- "(1,1)" RPT
+
+' --- SMSMessage is subject of Report (0,N) — (1,1)
+diamond "is subject of" as R_subj_RPT
+SMS    "(0,N)" -- R_subj_RPT
+R_subj_RPT -- "(1,1)" RPT
+
+' --- User gives Feedback (0,N) — (1,1)
+diamond "gives" as R_gives_FB
+USER   "(0,N)" -- R_gives_FB
+R_gives_FB -- "(1,1)" FB
+
+' --- SMSMessage relates to Feedback (0,N) — (0,1)
+diamond "relates to" as R_rel_FB
+SMS    "(0,N)" -- R_rel_FB
+R_rel_FB -- "(0,1)" FB
+
+' --- User publishes PublishedSpam (0,N) — (1,1)
+diamond "publishes" as R_pub_PS
+USER   "(0,N)" -- R_pub_PS
+R_pub_PS -- "(1,1)" PS
+
+' --- SMSMessage may be published as PublishedSpam (0,1) — (1,1)
+diamond "may be published as" as R_pub_SMS
+SMS    "(0,1)" -- R_pub_SMS
+R_pub_SMS -- "(1,1)" PS
+
+' --- User generates AuditLog (0,N) — (0,1)
+diamond "generates" as R_gen_AL
+USER   "(0,N)" -- R_gen_AL
+R_gen_AL -- "(0,1)" AL
+
+' --- AuditLog protected by AuditSeal (0,1) — (1,1)
+diamond "protected by" as R_prot_AS
+AL     "(0,1)" -- R_prot_AS
+R_prot_AS -- "(1,1)" AS
+
+' --- User owns BatchAnalysis (0,N) — (1,1)
+diamond "owns" as R_owns_BA
+USER   "(0,N)" -- R_owns_BA
+R_owns_BA -- "(1,1)" BA
+
+' --- User reviews TrainingSample (0,N) — (0,1)
+diamond "reviews (reviewer)" as R_rev_TS
+USER   "(0,N)" -- R_rev_TS
+R_rev_TS -- "(0,1)" TS
+
+' --- User creates DatasetVersion (0,N) — (1,1)
+diamond "creates" as R_cre_DV
+USER   "(0,N)" -- R_cre_DV
+R_cre_DV -- "(1,1)" DV
+
+' ════════════════════════════════════════════════════════
+'  NOTES
+' ════════════════════════════════════════════════════════
+note as N1
+  <b>ApiPerformanceMetric</b> and <b>SystemError</b>
+  exist independently; a request may be anonymous
+  or may fail before authentication, so no direct
+  User relationship is required at conceptual level.
+end note
+
+note as N2
+  <b>Audit mechanism</b> is tamper-<i>evident</i>,
+  not absolutely tamper-proof.
+  AuditSeal stores a chained hash
+  of the corresponding AuditLog record.
+end note
+
+note as N3
+  <b>ML scope</b>: English · Sinhala · Singlish
+  Classes: Legitimate · Spam · Scam
+  Pipeline: Word TF-IDF + Char TF-IDF
+           + Multinomial Naive Bayes
+  Hybrid high-risk rules supplement ML output.
+  Dataset approval/versioning does NOT
+  automatically retrain or deploy the model.
+end note
+
+APM .. N1
+SE  .. N1
+AS  .. N2
+DV  .. N3
+
+@enduml

@@ -1,0 +1,23 @@
+{
+  "model_version": "KRISS-Colab-2.0-Trilingual",
+  "model_name": "Naive Bayes",
+  "classes": [
+    "Legitimate",
+    "Scam",
+    "Spam"
+  ],
+  "languages": [
+    "English",
+    "Sinhala",
+    "Singlish"
+  ],
+  "training_rows": 7000,
+  "test_rows": 3000,
+  "split": "70/30 template-family-disjoint",
+  "template_overlap": 0,
+  "clean_text_overlap": 0,
+  "test_accuracy": 0.883,
+  "test_scam_recall": 0.8322222222222222,
+  "selection_rule": "0.55 Macro-F1 + 0.45 Scam Recall",
+  "synthetic_training_data": true
+}

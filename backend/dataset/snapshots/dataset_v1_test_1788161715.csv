@@ -1,0 +1,6 @@
+sample_id,sms_id,message,label,language,version,created_at
+6,702,Urgent: Your Commercial Bank account is locked. Verify at [URL],Scam,English,v1_test_1788161715,2026-08-31T06:00:41.136826
+8,742,Urgent: Your Commercial Bank account is locked. Verify at [URL],Scam,English,v1_test_1788161715,2026-08-31T06:01:30.614063
+10,782,Urgent: Your Commercial Bank account is locked. Verify at [URL],Scam,English,v1_test_1788161715,2026-08-31T06:13:30.318774
+12,822,Urgent: Your Commercial Bank account is locked. Verify at [URL],Scam,English,v1_test_1788161715,2026-08-31T06:15:51.963328
+14,864,Urgent: Your Commercial Bank account is locked. Verify at [URL],Scam,English,v1_test_1788161715,2026-08-31T07:35:14.464947

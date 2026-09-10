@@ -1,0 +1,253 @@
+@startuml
+title KRISS SMS Shield - Backend Class Diagram
+
+left to right direction
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam linetype ortho
+
+package "Authentication Domain" {
+  class User <<entity>> {
+    +id: Integer
+    +name: String
+    +username: String
+    +email: String
+    +password_hash: String
+    +role: String
+    +auth_provider: String
+    +language_preference: String
+    +notifications_enabled: Boolean
+    +auto_delete_history: Boolean
+    +failed_login_attempts: Integer
+    +locked_until: DateTime?
+    +firebase_uid: String?
+  }
+
+  class SessionToken <<entity>> {
+    +id: Integer
+    +jti: String
+    +expires_at: DateTime
+    +revoked: Boolean
+  }
+
+  class PasswordResetToken <<entity>> {
+    +id: Integer
+    +token_hash: String
+    +expires_at: DateTime
+    +used: Boolean
+    +attempts: Integer
+  }
+}
+
+package "SMS Analysis Domain" {
+  class SMSMessage <<entity>> {
+    +id: Integer
+    +sender_no: String?
+    +masked_text: Text
+    +language: String
+    +received_date: DateTime
+  }
+
+  class ClassificationResult <<entity>> {
+    +id: Integer
+    +predicted_class: String
+    +confidence_score: Float
+    +scam_type: String?
+    +explanation: Text
+    +model_version: String?
+  }
+
+  class BatchAnalysis <<entity>> {
+    +id: Integer
+    +batch_id: String
+    +total_count: Integer
+    +safe_count: Integer
+    +spam_count: Integer
+    +scam_count: Integer
+    +report_language: String
+    +items_json: Text
+    +created_at: DateTime
+  }
+
+  class Report <<entity>> {
+    +id: Integer
+    +reason: Text
+    +report_date: DateTime
+  }
+
+  class Feedback <<entity>> {
+    +id: Integer
+    +feedback_text: Text?
+    +expected_label: String?
+    +status: String
+    +review_note: String?
+    +created_at: DateTime
+  }
+
+  class PublishedSpam <<entity>> {
+    +id: Integer
+    +sender_no: String
+    +message_text: Text
+    +label: String
+    +published_at: DateTime
+  }
+}
+
+package "Administration and Governance" {
+  class AuditLog <<entity>> {
+    +id: Integer
+    +action: String
+    +detail: Text?
+    +created_at: DateTime
+  }
+
+  class AuditSeal <<entity>> {
+    +id: Integer
+    +previous_hash: String
+    +record_hash: String
+    +created_at: DateTime
+  }
+
+  class ApiPerformanceMetric <<entity>> {
+    +id: Integer
+    +request_id: String
+    +method: String
+    +path: String
+    +status_code: Integer
+    +duration_ms: Float
+    +created_at: DateTime
+  }
+
+  class SystemError <<entity>> {
+    +id: Integer
+    +request_id: String
+    +method: String
+    +path: String
+    +error_type: String
+    +message: Text
+    +created_at: DateTime
+  }
+
+  class TrainingSample <<entity>> {
+    +id: Integer
+    +masked_text: Text
+    +label: String
+    +language: String
+    +source_type: String
+    +source_reference: String
+    +consent_reference: String?
+    +review_status: String
+    +reviewed_at: DateTime?
+  }
+
+  class DatasetVersion <<entity>> {
+    +id: Integer
+    +version_tag: String
+    +sample_count: Integer
+    +file_path: String
+    +created_at: DateTime
+  }
+}
+
+package "Classification Services" {
+  class MLService <<service>> {
+    -model: Any
+    -metadata: Dictionary
+    +ready: Boolean
+    +load(): void
+    +predict(text: String): Prediction
+  }
+
+  class RuleResult <<value object>> {
+    +override: Boolean
+    +scam_type: String?
+    +confidence: Float
+    +reasons: List<String>
+  }
+
+  class ClassificationService <<service>> {
+    +classify_and_store(userId, message, senderNo): Result
+    +build_explanation(...): String
+    +auto_prune_history(userId, maxLimit): void
+  }
+
+  class TextProcessor <<utility>> {
+    +detect_language(text): String
+    +preprocess_text(text): String
+    +anonymize_text(text): String
+  }
+
+  class HybridRuleEngine <<service>> {
+    +evaluate_rules(text): RuleResult
+  }
+}
+
+package "Security and Observability" {
+  class AuthService <<service>> {
+    +hash_password(password): String
+    +verify_password(password, hash): Boolean
+    +create_session_token(user): String
+    +decode_token(token): Dictionary
+    +revoke_user_sessions(userId): void
+    +require_admin(user): User
+  }
+
+  class FirebaseTokenVerifier <<service>> {
+    +verify_firebase_id_token(token): Dictionary
+    +delete_firebase_user(uid): void
+  }
+
+  class ObservabilityMiddleware <<middleware>> {
+    +dispatch(request, callNext): Response
+  }
+
+  class AuditChainService <<service>> {
+    +create_audit_seal(auditLog): void
+    +verify_audit_chain(): Dictionary
+    +backfill_audit_seals(): void
+  }
+}
+
+' Domain relationships
+User "1" *-- "0..*" SessionToken : owns
+User "1" *-- "0..*" PasswordResetToken : requests
+User "1" *-- "0..*" SMSMessage : submits
+SMSMessage "1" *-- "0..1" ClassificationResult : result
+User "1" *-- "0..*" BatchAnalysis : owns
+User "1" -- "0..*" Report : files
+SMSMessage "1" -- "0..*" Report : subject
+User "1" -- "0..*" Feedback : gives
+SMSMessage "0..1" -- "0..*" Feedback : relates to
+User "1" -- "0..*" PublishedSpam : publishes
+SMSMessage "1" -- "0..1" PublishedSpam : publication
+User "0..1" -- "0..*" AuditLog : actor
+AuditLog "1" *-- "0..1" AuditSeal : sealed by
+User "0..1" -- "0..*" TrainingSample : reviews
+User "1" -- "0..*" DatasetVersion : creates
+
+' Service dependencies
+ClassificationService ..> MLService
+ClassificationService ..> HybridRuleEngine
+ClassificationService ..> TextProcessor
+ClassificationService ..> SMSMessage
+ClassificationService ..> ClassificationResult
+ClassificationService ..> AuditLog
+HybridRuleEngine ..> RuleResult
+AuthService ..> User
+AuthService ..> SessionToken
+AuthService ..> PasswordResetToken
+FirebaseTokenVerifier ..> User
+AuditChainService ..> AuditLog
+AuditChainService ..> AuditSeal
+ObservabilityMiddleware ..> ApiPerformanceMetric
+ObservabilityMiddleware ..> SystemError
+
+note right of MLService
+  Active artifact:
+  KRISS-Colab-2.0-Trilingual
+  Word + character TF-IDF
+  Multinomial Naive Bayes
+end note
+
+@enduml

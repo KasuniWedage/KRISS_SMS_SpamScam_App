@@ -1,0 +1,128 @@
+KRISS SMS SHIELD - QUICK START GUIDE
+====================================
+
+1. BACKEND SETUP
+----------------
+
+Requirements:
+- Python 3.11
+- Internet access for the initial dependency installation
+
+Open PowerShell in the project root and run:
+
+    python -m venv backend\.venv
+    backend\.venv\Scripts\Activate.ps1
+    python -m pip install -r backend\requirements.txt
+
+Copy backend/.env.example to backend/.env and configure your local values.
+Do not commit .env, service-account files, signing keys, or passwords.
+
+For local SQLite development:
+
+    ENVIRONMENT=development
+    DATABASE_URL=sqlite:///./kriss_dev.db
+
+Start the backend from the project root:
+
+    uvicorn app.main:app --reload
+
+Verify the server:
+
+    API:     http://127.0.0.1:8000/
+    Health:  http://127.0.0.1:8000/health
+    Swagger: http://127.0.0.1:8000/docs
+
+The health response should show model_ready=true and model version
+KRISS-Colab-2.0.
+
+
+2. ACTIVE ML MODEL
+------------------
+
+The application uses the V2 pipeline:
+
+    backend/model/sms_classifier_v2.joblib
+    backend/model/model_metadata_v2.json
+
+The V2 artifact includes word TF-IDF, character TF-IDF, and the Naive Bayes
+classifier. Keep backend/requirements.txt aligned with
+backend/model/model_runtime_requirements.txt.
+
+
+3. ANDROID STUDIO SETUP
+-----------------------
+
+1. Open only the android-app directory in Android Studio.
+2. Select JDK 17 as the Gradle JDK.
+3. Place the Firebase file at:
+
+       android-app/app/google-services.json
+
+4. Configure Google, Facebook, Firebase, and backend values in backend/.env.
+5. Sync Gradle and run the app on an Android emulator.
+
+The emulator connects to the host backend through:
+
+    http://10.0.2.2:8000/
+
+The release build requires a real HTTPS URL in ANDROID_API_BASE_URL.
+
+
+4. AUTHENTICATION CHECK
+-----------------------
+
+Test these flows:
+
+- Email registration and sign-in
+- Google sign-in
+- Facebook sign-in
+- Forgot Password:
+  1. Request the six-digit OTP.
+  2. Enter and verify the OTP.
+  3. Enter the new password after verification succeeds.
+  4. Sign in with the new password.
+- Logout and account deletion
+
+
+5. APPLICATION TEST FLOW
+------------------------
+
+Register or sign in
+-> Analyze a legitimate message
+-> Analyze a promotional spam message
+-> Analyze a high-risk scam message
+-> Review confidence and explanation
+-> Submit feedback or a report
+-> Search and delete history
+-> Run batch analysis
+-> View batch history
+-> Download a PDF report
+-> Change settings
+-> Log out
+
+
+6. SECURITY CHECKLIST
+---------------------
+
+- Never place Facebook App Secrets or Firebase private keys in Android XML.
+- Never commit backend/.env or firebase-service-account.json.
+- Use a random JWT secret of at least 32 characters in production.
+- Use explicit CORS origins and trusted hosts in production.
+- Use HTTPS for the production API.
+- Rotate any credential that was previously exposed or committed.
+- Keep the release signing key outside the repository.
+
+
+7. DATASET LIMITATION
+---------------------
+
+The bundled 10,000-message dataset is synthetic and contains English,
+Sinhala, and Singlish samples. Do not describe it as a collection of private
+real-world SMS messages. Real-world research validation requires licensed or
+user-consented data, a documented collection process, and an unseen test set.
+
+Tamil Unicode can be recognized by the backend, but the bundled model has not
+been trained and validated on a labeled Tamil dataset.
+
+
+For complete documentation, read README.md.

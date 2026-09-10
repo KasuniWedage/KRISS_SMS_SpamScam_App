@@ -1,0 +1,15 @@
+{
+  "pythonVersion": "3.11",
+  "venvPath": "backend",
+  "venv": ".venv",
+  "include": [
+    "backend",
+    "colab"
+  ],
+  "extraPaths": [
+    "backend",
+    "backend/scripts"
+  ],
+  "reportMissingImports": "none",
+  "reportMissingModuleSource": "none"
+}

@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS kriss_sms CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER IF NOT EXISTS 'kriss_user'@'localhost' IDENTIFIED BY 'kriss_password';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX, REFERENCES ON kriss_sms.* TO 'kriss_user'@'localhost';
+FLUSH PRIVILEGES;

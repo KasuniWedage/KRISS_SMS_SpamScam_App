@@ -1,0 +1,262 @@
+@startuml
+title KRISS SMS Shield - Android Client Class Diagram
+
+left to right direction
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam linetype ortho
+
+package "Android Framework and SDK" {
+  abstract class Application <<Android>>
+  abstract class AppCompatActivity <<Android>>
+  abstract class "RecyclerView.Adapter" as RecyclerViewAdapter <<Android>>
+  class FacebookSdk <<external SDK>>
+}
+
+package "Application and Authentication UI" {
+  class KrissApplication <<Application>> {
+    +onCreate(): void
+  }
+  class SplashActivity <<Activity>> {
+    +onCreate(savedInstanceState): void
+    -openApp(): void
+  }
+  class LoginActivity <<Activity>> {
+    -login(): void
+    -syncWithBackend(idToken): void
+    -onAuthSuccess(response): void
+  }
+  class RegisterActivity <<Activity>>
+  class ForgotPasswordActivity <<Activity>>
+  class FirebaseAuthManager <<auth helper>>
+  class GoogleAuthHelper <<auth helper>>
+  class FacebookAuthHelper <<auth helper>>
+}
+
+package "End-user UI" {
+  class HomeActivity <<Activity>>
+  class ResultActivity <<Activity>>
+  class BatchActivity <<Activity>>
+  class BatchHistoryActivity <<Activity>>
+  class HistoryActivity <<Activity>>
+  class CommunityActivity <<Activity>>
+  class SettingsActivity <<Activity>>
+  class AccountSettingsActivity <<Activity>>
+  class GuideActivity <<Activity>>
+}
+
+package "Administrator UI" {
+  class AdminActivity <<Activity>> {
+    -loadAllData(): void
+    -verifyAuditChain(): void
+    -triggerDatabaseBackup(): void
+    -openBackupSelectionDialog(): void
+    -runSandboxRestoreTest(filename): void
+    -confirmLiveRestore(filename): void
+    -updateUserRole(userId, role): void
+  }
+
+  class DatasetAdminActivity <<Activity>> {
+    -setupUI(): void
+    -loadSamples(): void
+    -updateStatsHeader(): void
+    -reviewSample(item, newStatus): void
+    -exportDatasetCsv(): void
+    -showCreateSnapshotDialog(): void
+    -createSnapshot(versionTag): void
+  }
+
+  class DatasetSampleAdapter <<RecyclerView.Adapter>>
+}
+
+package "Networking and Session" {
+  interface ApiService <<Retrofit>> {
+    +register(request): UserDto
+    +login(request): TokenResponse
+    +firebaseSync(request): TokenResponse
+    +classify(request): ClassificationResponse
+    +classifyBatch(request): List<ClassificationResponse>
+    +history(query, limit): List<HistoryItem>
+    +getBatchHistory(limit): List<BatchHistoryResponse>
+    +adminMetrics(): AdminMetrics
+    +adminPerformance(hours): AdminPerformance
+    +auditIntegrity(): AuditIntegrity
+    +adminDatasetSamples(...): List<DatasetSampleItem>
+  }
+
+  class RetrofitClient <<singleton>> {
+    +api(context): ApiService
+  }
+
+  class SessionManager {
+    +saveToken(token, persist): void
+    +token(): String?
+    +saveRole(role): void
+    +role(): String
+    +saveRememberedEmail(email): void
+    +rememberedEmail(): String?
+    +saveNotificationsEnabled(enabled): void
+    +notificationsEnabled(): Boolean
+    +clear(): void
+  }
+
+  class AuthGuard <<singleton>> {
+    +redirectToLogin(activity): void
+  }
+}
+
+package "Reports, Local Cache, and Notifications" {
+  class AnalysisPdfReport <<singleton>> {
+    +write(context, data, output): void
+  }
+  class BatchAnalysisPdfReport <<singleton>> {
+    +write(context, report, output): void
+  }
+  class BatchHistoryStore <<singleton>> {
+    +save(context, report): void
+    +list(context): List<BatchReportData>
+    +delete(context, batchId): Boolean
+    +clear(context): Boolean
+    +fromResults(...): BatchReportData
+    +fromApiResponse(response): BatchReportData
+  }
+  class ThreatNotificationManager <<singleton>> {
+    +createChannel(context): void
+    +show(context, smsId, label, confidence, message): void
+  }
+  class HistoryAdapter <<RecyclerView.Adapter>>
+  class CommunityAdapter <<RecyclerView.Adapter>>
+  class BatchHistoryAdapter <<RecyclerView.Adapter>>
+  class BatchReportData <<data>>
+  class AnalysisReportData <<data>>
+}
+
+package "API Data Models" {
+  class UserDto <<data>>
+  class TokenResponse <<data>>
+  class ClassificationRequest <<data>>
+  class ClassificationResponse <<data>>
+  class HistoryItem <<data>>
+  class BatchRequest <<data>>
+  class BatchHistoryResponse <<data>>
+  class AdminMetrics <<data>>
+  class AdminPerformance <<data>>
+  class AuditIntegrity <<data>>
+  class DatasetSampleItem <<data>>
+  class DatasetVersionItem <<data>>
+}
+
+' Actual Android/Kotlin inheritance
+KrissApplication --|> Application
+SplashActivity --|> AppCompatActivity
+LoginActivity --|> AppCompatActivity
+RegisterActivity --|> AppCompatActivity
+ForgotPasswordActivity --|> AppCompatActivity
+HomeActivity --|> AppCompatActivity
+ResultActivity --|> AppCompatActivity
+BatchActivity --|> AppCompatActivity
+BatchHistoryActivity --|> AppCompatActivity
+HistoryActivity --|> AppCompatActivity
+CommunityActivity --|> AppCompatActivity
+SettingsActivity --|> AppCompatActivity
+AccountSettingsActivity --|> AppCompatActivity
+GuideActivity --|> AppCompatActivity
+AdminActivity --|> AppCompatActivity
+DatasetAdminActivity --|> AppCompatActivity
+HistoryAdapter --|> RecyclerViewAdapter
+CommunityAdapter --|> RecyclerViewAdapter
+BatchHistoryAdapter --|> RecyclerViewAdapter
+DatasetSampleAdapter --|> RecyclerViewAdapter
+
+' Startup and navigation
+KrissApplication ..> FacebookSdk : initializes
+SplashActivity ..> LoginActivity : starts when no session
+SplashActivity ..> HomeActivity : starts for user role
+SplashActivity ..> AdminActivity : starts for admin role
+LoginActivity ..> RegisterActivity : starts
+LoginActivity ..> ForgotPasswordActivity : starts
+LoginActivity ..> FirebaseAuthManager : uses
+LoginActivity ..> GoogleAuthHelper : uses
+LoginActivity ..> FacebookAuthHelper : uses
+LoginActivity ..> HomeActivity : starts for user
+LoginActivity ..> AdminActivity : starts for admin
+
+' End-user navigation
+HomeActivity ..> ResultActivity : starts
+HomeActivity ..> BatchActivity : starts
+HomeActivity ..> HistoryActivity : starts
+HomeActivity ..> CommunityActivity : starts
+HomeActivity ..> SettingsActivity : starts
+SettingsActivity ..> AccountSettingsActivity : starts
+SettingsActivity ..> GuideActivity : starts
+BatchActivity ..> BatchHistoryActivity : starts
+HistoryActivity ..> BatchHistoryActivity : starts
+
+' Shared infrastructure
+SplashActivity ..> SessionManager
+LoginActivity ..> SessionManager
+HomeActivity ..> SessionManager
+AdminActivity ..> SessionManager
+AuthGuard ..> SessionManager
+RetrofitClient ..> SessionManager : reads access token
+
+LoginActivity ..> RetrofitClient
+RegisterActivity ..> RetrofitClient
+ForgotPasswordActivity ..> RetrofitClient
+HomeActivity ..> RetrofitClient
+ResultActivity ..> RetrofitClient
+BatchActivity ..> RetrofitClient
+BatchHistoryActivity ..> RetrofitClient
+HistoryActivity ..> RetrofitClient
+CommunityActivity ..> RetrofitClient
+SettingsActivity ..> RetrofitClient
+AccountSettingsActivity ..> RetrofitClient
+AdminActivity ..> RetrofitClient
+DatasetAdminActivity ..> RetrofitClient
+RetrofitClient --> ApiService : creates
+
+' Admin UI
+AdminActivity ..> DatasetAdminActivity : starts
+DatasetAdminActivity *-- DatasetSampleAdapter
+
+' Reports and cached history
+HistoryActivity *-- HistoryAdapter
+CommunityActivity *-- CommunityAdapter
+BatchHistoryActivity *-- BatchHistoryAdapter
+ResultActivity ..> AnalysisPdfReport
+ResultActivity ..> ThreatNotificationManager
+BatchActivity ..> BatchHistoryStore
+BatchActivity ..> BatchAnalysisPdfReport
+BatchHistoryActivity ..> BatchHistoryStore
+BatchHistoryActivity ..> BatchAnalysisPdfReport
+HistoryActivity ..> AnalysisPdfReport
+BatchHistoryStore o-- "0..*" BatchReportData : serializes and caches
+AnalysisPdfReport ..> AnalysisReportData
+
+' Representative DTO mappings
+ApiService ..> UserDto
+ApiService ..> TokenResponse
+ApiService ..> ClassificationRequest
+ApiService ..> ClassificationResponse
+ApiService ..> HistoryItem
+ApiService ..> BatchRequest
+ApiService ..> BatchHistoryResponse
+ApiService ..> AdminMetrics
+ApiService ..> AdminPerformance
+ApiService ..> AuditIntegrity
+ApiService ..> DatasetSampleItem
+ApiService ..> DatasetVersionItem
+
+note bottom of DatasetAdminActivity
+  Dataset approval and versioning do not
+  automatically retrain or deploy the ML model.
+end note
+
+note bottom of KrissApplication
+  Android launches SplashActivity from the manifest.
+  KrissApplication initializes application-wide SDK state;
+  it does not directly create or start the activity.
+end note
+
+@enduml

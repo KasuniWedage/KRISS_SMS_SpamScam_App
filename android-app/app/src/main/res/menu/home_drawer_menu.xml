@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item android:id="@+id/menuAnalyze" android:icon="@drawable/ic_send" android:title="@string/menu_analyze" />
+        <item android:id="@+id/menuBatch" android:icon="@drawable/ic_layers" android:title="@string/home_action_batch" />
+        <item android:id="@+id/menuHistory" android:icon="@drawable/ic_history" android:title="@string/home_action_history" />
+        <item android:id="@+id/menuCommunity" android:icon="@drawable/ic_flag" android:title="@string/community_feed" />
+        <item android:id="@+id/menuReports" android:icon="@drawable/ic_download" android:title="@string/my_reports" />
+        <item android:id="@+id/menuFeedback" android:icon="@drawable/ic_feedback" android:title="@string/my_feedback" />
+        <item android:id="@+id/menuSettings" android:icon="@drawable/ic_settings" android:title="@string/home_action_settings" />
+        <item android:id="@+id/menuAdmin" android:icon="@drawable/ic_analytics" android:title="@string/admin_dashboard" android:visible="false" />
+        <item android:id="@+id/menuLogout" android:icon="@drawable/ic_logout" android:title="@string/home_action_logout" />
+    </group>
+</menu>

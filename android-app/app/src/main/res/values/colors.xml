@@ -1,0 +1,40 @@
+<resources>
+    <!-- Brand gradient (indigo -> violet -> magenta) -->
+    <color name="brand_start">#052B6F</color>
+    <color name="brand_mid">#075AA6</color>
+    <color name="brand_end">#08B8C4</color>
+
+    <!-- Core palette -->
+    <color name="primary">#075AA6</color>
+    <color name="primary_dark">#041C44</color>
+    <color name="primary_light">#E4F7FA</color>
+    <color name="secondary">#00AEB8</color>
+    <color name="accent_blue">#009EAD</color>
+
+    <!-- Status colors -->
+    <color name="success">#16A34A</color>
+    <color name="success_bg">#DCFCE7</color>
+    <color name="warning">#D97706</color>
+    <color name="warning_bg">#FEF3C7</color>
+    <color name="danger">#DC2626</color>
+    <color name="danger_bg">#FEE2E2</color>
+    <color name="info_bg">#E0F2FE</color>
+    <color name="chart_card_bg">#ECF8FA</color>
+
+    <!-- Neutrals -->
+    <color name="surface">#F5F6FB</color>
+    <color name="surface_alt">#FFFFFF</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="text_primary">#111827</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_hint">#9CA3AF</color>
+    <color name="divider">#E5E7EB</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="overlay_dark">#33000000</color>
+
+    <!-- Social sign-in brand colors -->
+    <color name="facebook_blue">#1877F2</color>
+    <color name="google_button_bg">#FFFFFF</color>
+    <color name="google_button_border">#DADCE0</color>
+</resources>

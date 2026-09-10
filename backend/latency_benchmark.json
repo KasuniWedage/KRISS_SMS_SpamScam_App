@@ -1,0 +1,26 @@
+{
+  "benchmark_timestamp": "2026-08-31T05:47:20Z",
+  "total_requests": 100,
+  "successful_requests": 100,
+  "failed_requests": 0,
+  "success_rate_percent": 100.0,
+  "target_srs_p95_seconds": 2.0,
+  "achieved_p95_seconds": 0.07153,
+  "srs_latency_compliant": true,
+  "latency_metrics_ms": {
+    "average": 61.97,
+    "median_p50": 59.75,
+    "p95": 71.53,
+    "p99": 158.08,
+    "max": 158.08,
+    "min": 54.39
+  },
+  "e2e_breakdown_stages": {
+    "1_network_and_transport": "Mobile LTE / WiFi -> API Gateway (Typical ~20-60 ms)",
+    "2_auth_token_verification": "JWT HS256 HMAC verification (<1 ms)",
+    "3_preprocessing_and_heuristics": "Sinhala/Tamil/English regex rule scan (~1-3 ms)",
+    "4_ml_pipeline_inference": "TF-IDF + Calibrated LinearSVC (<5 ms)",
+    "5_db_persistence_and_audit_seal": "SQLite WAL write + SHA-256 hash seal (~2-5 ms)",
+    "6_json_serialization_and_render": "Pydantic model dump -> Android UI Canvas render (~10-20 ms)"
+  }
+}

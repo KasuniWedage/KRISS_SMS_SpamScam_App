@@ -1,0 +1,41 @@
+{
+  "model_version": "KRISS-Colab-1.1",
+  "selected_model": "Naive Bayes",
+  "best_params": {
+    "alpha": 0.1
+  },
+  "dataset_rows": 10000,
+  "train_rows": 7000,
+  "test_rows": 3000,
+  "split": "70/30 stratified",
+  "classes": [
+    "Legitimate",
+    "Spam",
+    "Scam"
+  ],
+  "languages": [
+    "English",
+    "Singlish",
+    "Sinhala"
+  ],
+  "accuracy": 1.0,
+  "macro_precision": 1.0,
+  "macro_recall": 1.0,
+  "macro_f1": 1.0,
+  "scam_recall": 1.0,
+  "roc_auc": {
+    "Legitimate": 1.0,
+    "Spam": 1.0,
+    "Scam": 1.0
+  },
+  "preprocessing": "NFKC + lowercase + URL/email/phone/number tokens + conservative stopwords",
+  "tfidf": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_features": 30000
+  },
+  "avg_inference_ms_colab": 0.9169300250005108
+}

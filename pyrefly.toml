@@ -1,0 +1,10 @@
+[pyrefly]
+# Suppress missing-import errors for optional packages (firebase_admin, google.auth)
+# and for modules resolved at runtime via sys.path manipulation
+ignore_missing_source = true
+ignore_missing_imports = true
+
+# Tell Pyrefly that the backend/ directory is the project root for `app.*` modules
+search_path = ["backend", "backend/scripts", "backend/tests"]
+
+python_version = "3.11"
