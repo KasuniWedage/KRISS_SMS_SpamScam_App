@@ -37,9 +37,9 @@ android {
     }
     signingConfigs {
         getByName("debug") {
-            storeFile = rootProject.file("keystores/firebase-debug.keystore")
+            storeFile = rootProject.file("kriss-debug.keystore")
             storePassword = "android"
-            keyAlias = "androiddebugkey"
+            keyAlias = "krissdebugkey"
             keyPassword = "android"
         }
     }
